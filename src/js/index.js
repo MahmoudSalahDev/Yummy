@@ -49,7 +49,7 @@ async function searchDefault() {
     $(".loading").removeClass("hidden").addClass("flex")
     const api = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=`);
     const response = await api.json();
-    data = response;
+    data = response.meals.slice(0, 20);
     displayMeals()
     $(".loading").removeClass("flex").addClass("hidden")
 }
@@ -57,12 +57,12 @@ searchDefault()
 
 function displayMeals() {
     let contain = ``
-    for (var i = 0; i < data.meals.length; i++) {
+    for (var i = 0; i < data.length; i++) {
         contain += `
-                    <div class="card rounded-[.375rem] hover:cursor-pointer overflow-hidden relative group" meal-id=${data.meals[i].idMeal}>
-                        <img src="${data.meals[i].strMealThumb}" class="w-full" alt="${data.meals[i].strMeal} image">
+                    <div class="card rounded-[.375rem] hover:cursor-pointer overflow-hidden relative group" meal-id=${data[i].idMeal}>
+                        <img src="${data[i].strMealThumb}" class="w-full" alt="${data[i].strMeal} image">
                         <div class="caption absolute p-[10px] top-0 left-0 right-0 bottom-0 bg-[#ffffffcf] flex items-center group-hover:translate-y-[0%] translate-y-[100%] transition-transform duration-[0.5s]">
-                            <h3 class="text-[25px] font-semibold">${data.meals[i].strMeal}</h3>
+                            <h3 class="text-[25px] font-semibold">${data[i].strMeal}</h3>
                         </div>
                     </div>
                 `
