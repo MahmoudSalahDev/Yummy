@@ -59,7 +59,7 @@ function displayMeals() {
     let contain = ``
     for (var i = 0; i < data.meals.length; i++) {
         contain += `
-                    <div class="card rounded-[15px] hover:cursor-pointer overflow-hidden relative group" meal-id=${data.meals[i].idMeal}>
+                    <div class="card rounded-[.375rem] hover:cursor-pointer overflow-hidden relative group" meal-id=${data.meals[i].idMeal}>
                         <img src="${data.meals[i].strMealThumb}" class="w-full" alt="${data.meals[i].strMeal} image">
                         <div class="caption absolute p-[10px] top-0 left-0 right-0 bottom-0 bg-[#ffffffcf] flex items-center group-hover:translate-y-[0%] translate-y-[100%] transition-transform duration-[0.5s]">
                             <h3 class="text-[25px] font-semibold">${data.meals[i].strMeal}</h3>
@@ -105,7 +105,7 @@ async function searchByID(id) {
     // end of check tags
     let contain = `<div class="flex flex-col md:flex-row py-[48px] md:px-[60px] text-[#f9f6f6]">
                 <div class="md:w-[calc(100%/3)] w-full px-[12px]" id="detailsphoto">
-                    <img src="${meal.strMealThumb}" class="w-full rounded-[10px]" alt="${meal.strMeal} thumbnail">
+                    <img src="${meal.strMealThumb}" class="w-full rounded-[.5rem]" alt="${meal.strMeal} thumbnail">
                     <h2 class="text-[29.7px] font-semibold">${meal.strMeal}</h2>
                 </div>
                 <div class="md:w-[calc((100%/3)*2)] w-full px-[12px]">
@@ -165,7 +165,7 @@ function displaySearch() {
     let contain = ``
     for (var i = 0; i < searchData.length; i++) {
         contain += `
-                    <div class="card rounded-[15px] hover:cursor-pointer h-[fit-content] overflow-hidden relative group" meal-id=${searchData[i].idMeal}>
+                    <div class="card rounded-[.375rem] hover:cursor-pointer h-[fit-content] overflow-hidden relative group" meal-id=${searchData[i].idMeal}>
                         <img src="${searchData[i].strMealThumb}" class="w-full" alt="${searchData[i].strMeal} image">
                         <div class="caption absolute p-[10px] top-0 left-0 right-0 bottom-0 bg-[#ffffffcf] flex items-center group-hover:translate-y-[0%] translate-y-[100%] transition-transform duration-[0.5s]">
                             <h3 class="text-[25px] font-semibold">${searchData[i].strMeal}</h3>
@@ -237,7 +237,7 @@ function displayCategory() {
     let contain = ``
     for (var i = 0; i < catData.length; i++) {
         contain += `
-                    <div class="card rounded-[15px] hover:cursor-pointer  overflow-hidden relative group" onclick="getCategoryMeals('${catData[i].strCategory}')">
+                    <div class="card rounded-[.357rem] hover:cursor-pointer  overflow-hidden relative group" onclick="getCategoryMeals('${catData[i].strCategory}')">
                         <img src="${catData[i].strCategoryThumb}" class="w-full" alt="${catData[i].strCategory} thumbnail">
                         <div class="caption absolute p-[10px] top-0 left-0 right-0 bottom-0 bg-[#ffffffcf] flex flex-col text-center  group-hover:translate-y-[0%] translate-y-[105%] transition-transform duration-[0.5s]">
                             <h3 class="text-[25px] font-semibold">${catData[i].strCategory}</h3>
@@ -262,7 +262,7 @@ function displayCategoryMeals() {
     let contain = ``
     for (var i = 0; i < categoryMeals.length; i++) {
         contain += `
-                    <div class="card rounded-[15px] hover:cursor-pointer  overflow-hidden relative group" onclick="searchByID('${categoryMeals[i].idMeal}')">
+                    <div class="card rounded-[.375rem] hover:cursor-pointer  overflow-hidden relative group" onclick="searchByID('${categoryMeals[i].idMeal}')">
                         <img src="${categoryMeals[i].strMealThumb}" class="w-full" alt="${categoryMeals[i].strMeal} thumbnail">
                         <div class="caption absolute p-[10px] top-0 left-0 right-0 bottom-0 bg-[#ffffffcf] flex  items-center  group-hover:translate-y-[0%] translate-y-[105%] transition-transform duration-[0.5s]">
                             <h3 class="text-[25px] font-semibold">${categoryMeals[i].strMeal}</h3>
@@ -315,7 +315,7 @@ function displayAreaMeals() {
     let contain = ``
     for (var i = 0; i < areaMeals.length; i++) {
         contain += `
-                    <div class="card rounded-[15px] hover:cursor-pointer  overflow-hidden relative group" onclick="searchByID('${areaMeals[i].idMeal}')">
+                    <div class="card rounded-[.375rem] hover:cursor-pointer  overflow-hidden relative group" onclick="searchByID('${areaMeals[i].idMeal}')">
                         <img src="${areaMeals[i].strMealThumb}" class="w-full" alt="${areaMeals[i].strMeal} thumbnail">
                         <div class="caption absolute p-[10px] top-0 left-0 right-0 bottom-0 bg-[#ffffffcf] flex  items-center  group-hover:translate-y-[0%] translate-y-[105%] transition-transform duration-[0.5s]">
                             <h3 class="text-[25px] font-semibold">${areaMeals[i].strMeal}</h3>
@@ -372,7 +372,7 @@ function displayIngreMeals() {
     let contain = ``
     for (var i = 0; i < ingreMeals.length; i++) {
         contain += `
-                    <div class="card rounded-[15px] hover:cursor-pointer  overflow-hidden relative group" onclick="searchByID('${ingreMeals[i].idMeal}')">
+                    <div class="card rounded-[.375rem] hover:cursor-pointer  overflow-hidden relative group" onclick="searchByID('${ingreMeals[i].idMeal}')">
                         <img src="${ingreMeals[i].strMealThumb}" class="w-full" alt="${ingreMeals[i].strMeal} thumbnail">
                         <div class="caption absolute p-[10px] top-0 left-0 right-0 bottom-0 bg-[#ffffffcf] flex  items-center  group-hover:translate-y-[0%] translate-y-[105%] transition-transform duration-[0.5s]">
                             <h3 class="text-[25px] font-semibold">${ingreMeals[i].strMeal}</h3>

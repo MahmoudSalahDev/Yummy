@@ -787,6 +787,10 @@ video {
   gap: 5px;
 }
 
+.gap-\[24px\] {
+  gap: 24px;
+}
+
 .gap-x-\[0px\] {
   -moz-column-gap: 0px;
        column-gap: 0px;
@@ -810,6 +814,18 @@ video {
 
 .rounded-\[7px\] {
   border-radius: 7px;
+}
+
+.rounded-\[\.375rem\] {
+  border-radius: .375rem;
+}
+
+.rounded-\[\.5rem\] {
+  border-radius: .5rem;
+}
+
+.rounded-\[\.357rem\] {
+  border-radius: .357rem;
 }
 
 .border {
