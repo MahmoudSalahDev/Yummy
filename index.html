@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummy</title>
+    <link rel="icon" href="./src/images/logo (1).png">
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="./src/css/all.min.css">
+    <!-- tailwind css -->
+    <link rel="stylesheet" href="./src/css/output.css">
+</head>
+
+<body class="bg-[#0d0d0d]">
+    <aside class="fixed h-full flex z-[999] translate-x-[calc(-100%+66px)] duration-[0.5s]">
+        <div class="inner  text-[#f9f6f6] flex flex-col justify-between p-[24px] bg-[#0d0d0d]">
+            <div class="taps  flex-col flex overflow-hidden">
+                <a class="py-[8px] top-[300px] relative hover:cursor-pointer" id="Search">Search</a>
+                <a class="py-[8px] top-[300px] relative hover:cursor-pointer" id="Categories">Categories</a>
+                <a class="py-[8px] top-[300px] relative hover:cursor-pointer" id="Area">Area</a>
+                <a class="py-[8px] top-[300px] relative hover:cursor-pointer" id="Ingredients">Ingredients</a>
+                <a class="py-[8px] top-[300px] relative hover:cursor-pointer" id="Contact">Contact Us</a>
+            </div>
+            <div class="">
+                <div class="icons flex gap-[5px] mb-[5px]">
+                    <i class="fa-brands fa-facebook hover:cursor-pointer"></i>
+                    <i class="fa-brands fa-twitter hover:cursor-pointer"></i>
+                    <i class="fa-solid fa-globe hover:cursor-pointer"></i>
+                </div>
+                <p class="mb-[16px]">Copyright Â© 2019 All Rights <br> Reserved.</p>
+            </div>
+        </div>
+        <div class="outer bg-white py-[24px] px-[8px] flex flex-col items-center justify-between">
+            <img src="./src/images/logo (1).png" class="w-[50px]" alt="logo image">
+            <div class="flex flex-col text-[30px] hover:cursor-pointer" id="toggleIcons">
+                <i class="fa-solid fa-bars" id="open"></i>
+                <i class="fa-solid fa-x hidden" id="close"></i>
+            </div>
+            <div class="flex flex-col">
+                <i class="fa-solid fa-globe hover:cursor-pointer mb-[5px]"></i>
+                <i class="fa-solid fa-share-nodes hover:cursor-pointer"></i>
+            </div>
+        </div>
+    </aside>
+    <div
+        class="loading hidden justify-center items-center absolute w-full h-full bg-[#0d0d0d] z-50 text-white text-[80px]">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+    </div>
+    <section id="main" class=" all-sections">
+        <div class="container px-[20px] md:px-[0px] py-[70px]">
+            <div class="grid md:grid-cols-4 gap-[20px]" id="mealsphotos">
+            </div>
+        </div>
+    </section>
+    <section id="details" class=" hidden all-sections">
+        <div class="container min-h-[100vh]">
+
+        </div>
+    </section>
+    <section id="serchSection" class="all-sections hidden">
+        <div class="container px-[30px] md:px-[0px]">
+            <div class="flex flex-col md:flex-row py-[24px] gap-[30px]  items-center">
+                <input type="text" id="nameInput"
+                    class="text-white w-[70%] md:w-[50%] bg-[#0d0d0d] border rounded py-[6px] px-[12px] outline-none focus:border-[#86b7fe] focus:shadow-[0_0_0_0.25rem_rgba(13,110,253,0.25)]"
+                    placeholder="Search By Name">
+                <input type="text" id="letterInput" maxlength="1"
+                    class="text-white w-[70%] md:w-[50%] bg-[#0d0d0d] border rounded py-[6px] px-[12px] outline-none focus:border-[#86b7fe] focus:shadow-[0_0_0_0.25rem_rgba(13,110,253,0.25)]"
+                    placeholder="Search By First Letter">
+            </div>
+            <div class="grid md:grid-cols-4 gap-[20px] relative " id="searchPhotos">
+                <div
+                    class="search-loading hidden justify-center items-center absolute w-full h-full bg-[#0d0d0d] z-50 text-white text-[80px]">
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section id="categoriesSection" class="all-sections hidden">
+        <div class="container px-[20px] md:px-[0px] py-[48px]">
+            <div class="grid md:grid-cols-4 gap-[20px] xl:mx-[110px]" id="categoryPhotos">
+            </div>
+        </div>
+    </section>
+    <section id="areaSection" class="all-sections hidden">
+        <div class="container px-[20px] md:px-[0px] py-[70px]">
+            <div class="grid md:grid-cols-4 gap-[20px] " id="areaPhotos">
+
+            </div>
+        </div>
+    </section>
+    <section id="ingreSection" class="all-sections hidden">
+        <div class="container px-[20px] md:px-[0px] py-[70px]">
+            <div class="grid md:grid-cols-4 gap-[20px] " id="ingrePhotos">
+
+            </div>
+        </div>
+    </section>
+    <section id="contactSection" class="all-sections hidden">
+        <div class="container min-h-[100vh] flex flex-col justify-center items-center">
+            <div
+                class="flex flex-col items-center md:items-start md:flex-row flex-wrap py-[24px] md:gap-x-[30px] gap-x-[0px]  w-[70%] mx-[auto]">
+                <div class="md:w-[calc(50%-15px)] w-[80%] mt-[24px]">
+                    <input type="text" oninput="nameValidation()" placeholder="Enter Your Name" name="fullName" required
+                        id="nameInputContact"
+                        class="w-full border rounded py-[6px] px-[12px] outline-none focus:border-[#86b7fe] focus:shadow-[0_0_0_0.25rem_rgba(13,110,253,0.25)]">
+                    <p class="hidden p-[16px] mt-[8px] mb-[16px] bg-[#f8d7da] text-[#842029] text-center rounded">
+                        Special
+                        characters and numbers not allowed</p>
+                </div>
+                <div class="md:w-[calc(50%-15px)] w-[80%] mt-[24px]">
+                    <input type="email" oninput="emailValidation()" placeholder="Enter Your Email" name="email" required
+                        id="emailInput"
+                        class="w-full border rounded py-[6px] px-[12px] outline-none focus:border-[#86b7fe] focus:shadow-[0_0_0_0.25rem_rgba(13,110,253,0.25)]">
+                    <p class="hidden p-[16px] mt-[8px] mb-[16px] bg-[#f8d7da] text-[#842029] text-center rounded">Email
+                        not
+                        valid *exemple@yyy.zzz</p>
+                </div>
+                <div class="md:w-[calc(50%-15px)] w-[80%] mt-[24px]">
+                    <input type="number" oninput="phoneValidation()" min="0" placeholder="Enter Your Phone" name="phone"
+                        required id="phoneInput"
+                        class="w-full border rounded py-[6px] px-[12px] outline-none focus:border-[#86b7fe] focus:shadow-[0_0_0_0.25rem_rgba(13,110,253,0.25)]">
+                    <p class="hidden p-[16px] mt-[8px] mb-[16px] bg-[#f8d7da] text-[#842029] text-center rounded">Enter
+                        valid
+                        Phone Number</p>
+                </div>
+                <div class="md:w-[calc(50%-15px)] w-[80%] mt-[24px]">
+                    <input type="number" min="1" oninput="ageValidation()" placeholder="Enter Your age" name="age"
+                        required id="ageInput"
+                        class="w-full border rounded py-[6px] px-[12px] outline-none focus:border-[#86b7fe] focus:shadow-[0_0_0_0.25rem_rgba(13,110,253,0.25)]">
+                    <p class="hidden p-[16px] mt-[8px] mb-[16px] bg-[#f8d7da] text-[#842029] text-center rounded">Enter
+                        valid
+                        age</p>
+                </div>
+                <div class="md:w-[calc(50%-15px)] w-[80%] mt-[24px]">
+                    <input type="password" oninput="passValidation()" placeholder="Enter Your Password" name="password"
+                        required id="passwordInput"
+                        class="w-full border rounded py-[6px] px-[12px] outline-none focus:border-[#86b7fe] focus:shadow-[0_0_0_0.25rem_rgba(13,110,253,0.25)]">
+                    <p class="hidden p-[16px] mt-[8px] mb-[16px] bg-[#f8d7da] text-[#842029] text-center rounded">Enter
+                        valid
+                        password *Minimum eight characters, at least one letter and one number:*</p>
+                </div>
+                <div class="md:w-[calc(50%-15px)] w-[80%] mt-[24px]">
+                    <input type="password" oninput="repassValidation()" placeholder="Repassword" name="repassword"
+                        required id="repasswordInput"
+                        class="w-full border rounded py-[6px] px-[12px] outline-none focus:border-[#86b7fe] focus:shadow-[0_0_0_0.25rem_rgba(13,110,253,0.25)]">
+                    <p class="hidden p-[16px] mt-[8px] mb-[16px] bg-[#f8d7da] text-[#842029] text-center rounded">
+                        Enter valid repassword</p>
+                </div>
+            </div>
+            <button type="submit" id="submit" disabled
+                class="py-[6px] focus:shadow-[0_0_0_0.25rem_rgba(220,53,69,.5)] focus:text-white focus:bg-[#dc3545] px-[8px] disabled:border-[#942732] disabled:text-[#942732] disabled:hover:bg-transparent hover:text-white hover:bg-[#dc3545]  transition-colors border border-[#dc3545] rounded-[7px] text-[#dc3545] mx-[auto] text-center block">Submit</button>
+        </div>
+    </section>
+    <!-- ////////////////////// -->
+    <script src="./src/js/jquery-3.7.1.min.js"></script>
+    <script src="./src/js/index.js"></script>
+</body>
+
+</html>
