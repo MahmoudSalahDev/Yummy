@@ -103,7 +103,7 @@ async function searchByID(id) {
     }
 
     // end of check tags
-    let contain = `<div class="flex flex-col md:flex-row py-[48px] text-[#f9f6f6]">
+    let contain = `<div class="flex flex-col md:flex-row py-[48px] md:px-[60px] text-[#f9f6f6]">
                 <div class="md:w-[calc(100%/3)] w-full px-[12px]" id="detailsphoto">
                     <img src="${meal.strMealThumb}" class="w-full rounded-[10px]" alt="${meal.strMeal} thumbnail">
                     <h2 class="text-[29.7px] font-semibold">${meal.strMeal}</h2>

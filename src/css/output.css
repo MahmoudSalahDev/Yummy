@@ -1137,6 +1137,16 @@ video {
     padding-left: 0px;
     padding-right: 0px;
   }
+
+  .md\:px-\[60px\] {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .md\:px-\[65px\] {
+    padding-left: 65px;
+    padding-right: 65px;
+  }
 }
 
 @media (min-width: 1280px) {
